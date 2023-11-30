@@ -1,1 +1,1 @@
-# ts-course
+TypeScript course
