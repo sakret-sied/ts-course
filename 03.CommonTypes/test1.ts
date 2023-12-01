@@ -1,4 +1,4 @@
-interface info {
+type Info = {
   officeId: number;
   isOpened: boolean;
   contacts: {
@@ -8,16 +8,16 @@ interface info {
       city: string;
     };
   };
-}
+};
 
-let data: info = {
+let data: Info = {
   officeId: 45,
   isOpened: false,
   contacts: {
     phone: '+79100000000',
     email: 'my@email.ru',
     address: {
-      city: 'Москва',
+      city: 'Moscow',
     },
   },
 };

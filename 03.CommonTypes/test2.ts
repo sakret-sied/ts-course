@@ -1,42 +1,44 @@
 // Faq request
 const enum FaqStatus {
-  PUBLISHED = 'published',
-  DRAFT = 'draft',
   DELETED = 'deleted',
+  DRAFT = 'draft',
+  PUBLISHED = 'published',
 }
-interface FaqRequest {
+type FaqRequest = {
   topicId: number;
   status?: FaqStatus;
-}
+};
 const request: FaqRequest = {
   topicId: 5,
-  status: FaqStatus.PUBLISHED, // "draft", "deleted"
+  status: FaqStatus.PUBLISHED,
 };
 
 // Faq response
-interface FaqResponse {
-  question: string;
-  answer: string;
-  tags: [...string[]];
-  likes: number;
-  status: FaqStatus;
-}
-
-const response: [FaqResponse] = [
+type FaqResponse = [
   {
-    question: 'Как осуществляется доставка?',
-    answer: 'быстро!',
+    question: string;
+    answer: string;
+    tags: [...string[]];
+    likes: number;
+    status: FaqStatus;
+  }
+];
+
+const response: FaqResponse = [
+  {
+    question: 'How is delivery carried out?',
+    answer: 'Fast!',
     tags: ['popular', 'new'],
     likes: 3,
     status: FaqStatus.PUBLISHED,
   },
 ];
 
-async function getFaqs(req: FaqRequest): Promise<[FaqResponse]> {
+async function getFaqs(req: FaqRequest): Promise<FaqResponse> {
   const res = await fetch('/faqs', {
     method: 'POST',
     body: JSON.stringify(req),
   });
-  const data: [FaqResponse] = await res.json();
+  const data: FaqResponse = await res.json();
   return data;
 }
