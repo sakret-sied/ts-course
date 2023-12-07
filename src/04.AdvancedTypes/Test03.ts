@@ -7,9 +7,7 @@ export function myMethod(req: IRequest): IResponse {
     status: IResponseStatus.Success,
     data: {
       databaseId: 567,
-      sum: 10000,
-      from: 2,
-      to: 4,
+      ...req,
     },
   };
 }
