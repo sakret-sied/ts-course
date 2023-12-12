@@ -10,26 +10,20 @@ const groupData: Data[] = [
 ];
 
 interface IGroup<T> {
-  [key: string]: T[];
+  [key: string | number]: T[];
 }
 
-type key = string | number | symbol;
-
-function group<T extends Record<key, any>>(
-  array: T[],
+function grouping<T extends Record<string, any>>(
+  data: T[],
   key: keyof T
 ): IGroup<T> {
-  return array.reduce<IGroup<T>>((result: IGroup<T>, item: T): IGroup<T> => {
-    const itemKey = item[key];
-    let current = result[itemKey];
-    if (Array.isArray(current)) {
-      current.push(item);
-    } else {
-      current = [item];
-    }
-    result[itemKey] = current;
-    return result;
-  }, {});
+  return data.reduce<IGroup<T>>(
+    (acc: IGroup<T>, item) => ({
+      ...acc,
+      [item[key]]: [...(acc[item[key]] || []), item],
+    }),
+    {}
+  );
 }
 
-console.log(group(groupData, 'group'));
+console.log(grouping(groupData, 'group'));
