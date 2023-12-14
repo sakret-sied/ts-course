@@ -1,6 +1,6 @@
-import { IResponseStatus } from './Enums/IResponseStatus';
-import IRequest from './Interfaces/IRequest';
-import { IResponse } from './Types/IResponse';
+import { IResponseStatus } from './Enums/IResponseStatus.js';
+import IRequest from './Interfaces/IRequest.js';
+import { IResponse } from './Types/IResponse.js';
 
 export function myMethod(req: IRequest): IResponse {
   return {

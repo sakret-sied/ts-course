@@ -1,5 +1,5 @@
-import Delivery from './Delivery';
-import Product from './Product';
+import Delivery from './Delivery.js';
+import Product from './Product.js';
 
 export default class Cart {
   private list: Product[] = [];

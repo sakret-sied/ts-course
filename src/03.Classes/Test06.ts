@@ -1,6 +1,6 @@
-import Cart from './Classes/Cart';
-import Delivery from './Classes/Delivery';
-import Product from './Classes/Product';
+import Cart from './Classes/Cart.js';
+import Delivery from './Classes/Delivery.js';
+import Product from './Classes/Product.js';
 
 const apple = new Product(1, 'Apple', 10);
 const banana = new Product(2, 'Banana', 30);

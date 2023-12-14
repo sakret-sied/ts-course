@@ -1,4 +1,4 @@
-import AbstructLogger from './AbstructLogger';
+import AbstructLogger from './AbstructLogger.js';
 
 export default class Logger extends AbstructLogger {
   log(message: string): void {

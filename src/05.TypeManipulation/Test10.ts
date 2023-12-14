@@ -1,17 +1,11 @@
-interface Data {
-  group: number;
-  name: string;
-}
+import Data from './Interfaces/Data.js';
+import IGroup from './Interfaces/IGroup.js';
 
 const groupData: Data[] = [
   { group: 1, name: 'a' },
   { group: 1, name: 'b' },
   { group: 2, name: 'c' },
 ];
-
-interface IGroup<T> {
-  [key: string | number]: T[];
-}
 
 function grouping<T extends Record<string, any>>(
   data: T[],

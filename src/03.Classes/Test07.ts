@@ -1,4 +1,4 @@
-import Logger from './Classes/Logger';
+import Logger from './Classes/Logger.js';
 
 const logger = new Logger();
 logger.logWithDate('Hello!');

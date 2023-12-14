@@ -1,7 +1,7 @@
-import { IResponseStatus } from './Enums/IResponseStatus';
-import IResponseSuccess from './Interfaces/IResponseSuccess';
-import { myMethod, myRequest } from './Test03';
-import { IResponse } from './Types/IResponse';
+import { IResponseStatus } from './Enums/IResponseStatus.js';
+import IResponseSuccess from './Interfaces/IResponseSuccess.js';
+import { myMethod, myRequest } from './Test03.js';
+import { IResponse } from './Types/IResponse.js';
 
 type f = (res: IResponse) => number;
 

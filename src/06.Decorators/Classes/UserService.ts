@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { IUserService } from '../Interfaces/IUserService';
+import { IUserService } from '../Interfaces/IUserService.js';
 
 @CreatedAt()
 export default class UserService implements IUserService {
