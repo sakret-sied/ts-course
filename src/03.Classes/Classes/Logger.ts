@@ -1,11 +1,11 @@
-import AbstructLogger from './AbstructLogger.js';
+import AbstractLogger from './AbstractLogger.js';
 
-export default class Logger extends AbstructLogger {
-  log(message: string): void {
+export default class Logger extends AbstractLogger {
+  public log(message: string): void {
     console.log(message);
   }
 
-  logWithDate(message: string) {
+  public logWithDate(message: string) {
     this.printDate(new Date());
     this.log(message);
   }

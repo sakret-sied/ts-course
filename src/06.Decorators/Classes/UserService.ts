@@ -7,12 +7,12 @@ export default class UserService implements IUserService {
   private _users: number = 1000;
 
   @Catch({ rethrow: false })
-  getUsersInDatabase(users: number): number {
+  public getUsersInDatabase(users: number): number {
     console.log(this._users, users);
     throw new Error('404');
   }
 
-  getSome(@Positive() some: number = 1) {
+  public getSome(@Positive() some: number = 1) {
     console.log(some);
   }
 }
