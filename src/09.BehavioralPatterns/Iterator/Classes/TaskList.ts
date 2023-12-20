@@ -1,3 +1,4 @@
+import PriorityIterator from './PriorityIterator.js';
 import Task from './Task.js';
 
 export default class TaskList {
